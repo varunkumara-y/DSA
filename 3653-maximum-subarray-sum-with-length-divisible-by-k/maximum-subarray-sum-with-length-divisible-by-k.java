@@ -1,17 +1,22 @@
 class Solution {
     public long maxSubarraySum(int[] nums, int k) {
-        long sum=0;
-        long maxSum = Long.MIN_VALUE;
-        long[] minSoFar = new long[k];
-        Arrays.fill(minSoFar, Long.MAX_VALUE / 2);
-        minSoFar[(k-1)%k]=0;
+       long prefix = 0;
+       long ans = Long.MIN_VALUE;
 
-        for(int i=0;i<nums.length;i++){
-            sum+=nums[i];
-            maxSum = Math.max(maxSum, sum-minSoFar[i%k]);
-            minSoFar[i%k]=Math.min(minSoFar[i%k],sum);
+       Map<Integer, Long> map = new HashMap<>();
+       map.put(0,0L);
+
+       for(int i=0;i<nums.length;i++){
+        prefix+=nums[i];
+        int rem = (i+1)%k;
+
+        if(map.containsKey(rem)){
+            ans = Math.max(ans, prefix-map.get(rem));
         }
-        return maxSum;
-        
+
+        map.put(rem, Math.min(map.getOrDefault(rem, Long.MAX_VALUE),prefix));
+       }
+       return ans;
+         
     }
 }
