@@ -1,13 +1,21 @@
 class Solution {
     public int countPartitions(int[] nums) {
-        int prefix=0;
-        for(int i=0;i<nums.length;i++){
-            prefix =prefix + nums[i];
+        int total = 0;
+        for(int num : nums){
+            total+=num;
         }
-            if(prefix%2==0){
-              return nums.length-1;
+        int leftSum = 0;
+        int part = 0;
+
+        for(int i=0;i<nums.length-1;i++){
+            leftSum+=nums[i];
+            int rightSum=total-leftSum;
+
+            if((leftSum%2)==(rightSum%2)){
+                part++;
             }
-        return 0;
+        }
+        return part;
         }
         
     }
