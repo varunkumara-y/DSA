@@ -7,6 +7,7 @@ class Solution {
         int j=0;
         for(int i=1;i<n;i++){
             if(j<i && complexity[j]<complexity[i]){
+                //used only this as reference
                 count = (count*i) % MOD;
             }else{
                 return 0;
