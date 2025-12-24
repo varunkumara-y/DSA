@@ -9,11 +9,11 @@ class Solution {
        
         Arrays.sort(capacity);
         for(int i=m-1;i>=0;i--){
-            if(sum<=0){
-                return count;
-            }
                 sum-=capacity[i];
                 count++;
+                if(sum<=0){
+                    break;
+                }
         }
         return count;
     }
