@@ -22,21 +22,22 @@ class Solution {
             }   
             
         }
-       int countA=0;
-       int countB=0;
-       for(int num:nums){
+    //   second check
+    int countA=0;
+    int countB=0;
+    for(int num:nums){
         if(num==candidate1){
             countA++;
         }else if(num==candidate2){
             countB++;
         }
-       }
-       if(countA>nums.length/3){
+    }
+    if(countA>nums.length/3){
         list.add(candidate1);
-       }
-       if(countB>nums.length/3){
+    }
+    if(countB>nums.length/3){
         list.add(candidate2);
-       }
+    }
        return list;
         
     }
