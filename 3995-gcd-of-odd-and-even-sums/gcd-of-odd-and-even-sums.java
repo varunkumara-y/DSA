@@ -6,10 +6,10 @@ class Solution {
     return gcd(b, a % b);
 }
     public int gcdOfOddEvenSums(int n) {
-        int sumOdd=n*n;
-        int sumEven=n*(n+1);
-        int ans = gcd(sumOdd,sumEven);
-        return ans;
+        int sumOdd=0;
+        int sumEven=0;
+        // int ans = gcd(sumOdd,sumEven);
+        return n;
 
 
         
