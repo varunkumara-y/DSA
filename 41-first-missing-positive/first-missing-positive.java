@@ -9,13 +9,11 @@ class Solution {
     }
 
     // marking
-    for(int i=0;i<n;i++){
-       int num = Math.abs(nums[i]);
-       if(num>n) continue;
-       if(nums[num-1]>0){
-        nums[num-1]=-nums[num-1];
-       }
-    }
+    for (int i = 0; i < n; i++) {
+    int num = Math.abs(nums[i]);
+    if (num <= n)
+        nums[num - 1] = -Math.abs(nums[num - 1]);
+}
 
     // finding number
     for(int i=0;i<n;i++){
