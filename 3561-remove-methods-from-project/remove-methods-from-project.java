@@ -8,7 +8,7 @@ class Solution {
         for (int[] e : invocations) {
             graph[e[0]].add(e[1]);
         }
-
+        //keep track of the visited nodes
         boolean[] suspicious = new boolean[n];
         ArrayDeque<Integer> queue = new ArrayDeque<>();
         queue.offer(k);
