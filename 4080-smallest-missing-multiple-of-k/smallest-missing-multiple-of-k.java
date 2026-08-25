@@ -6,7 +6,7 @@ class Solution {
         }
 
         for(int i=k;;i+=k){
-            if(i>100 || !found[i]){
+            if(i>100||!found[i]){
                 return i;
             }
         }
